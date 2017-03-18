@@ -1,0 +1,56 @@
+---
+title: "DDP assignment week 4"
+author: "J Balvers"
+date: "March 18, 2017"
+output: ioslides_presentation
+runtime: rpubs
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Shiny app documentation
+This presentation contains user documentation for the "NL Weatherdata" shiny app created for the week 4 assignment of Developing Data Products.
+
+## Goal of the app
+The "NL Weatherdata" app allows the user to interact with real weatherdata from a weatherstation in The Netherlands. The data is supplied by the Dutch Meteorological Institute ([KNMI](http://www.knmi.nl)).
+
+Allows the following user input:
+
+- Select which variable/measurement to plot
+- Interact with the graph itself
+- Select a year to plot data from
+
+## Data source
+The Dutch meteorological institute (KNMI) supplies weather data from weather stations across The Netherlands. 
+
+Data is avaiable freely from the KNMI website [here, in Dutch](http://www.knmi.nl/nederland-nu/klimatologie).
+
+I manually downloaded 24-hour avarage weather data for weather station 260 (city: De Bilt) [here](http://cdn.knmi.nl/knmi/map/page/klimatologie/gegevens/daggegevens/etmgeg_260.zip).
+
+## Available data
+
+The following measurements/variables are available in the dataset that is included in the app. The user can select which variable to plot in the interactive graph:
+
+- TG        = Daily mean temperature in (0.1 degrees Celsius)
+- TN        = Minimum temperature (in 0.1 degrees Celsius)
+- TX        = Maximum temperature (in 0.1 degrees Celsius)
+- UG        = Daily mean relative atmospheric humidity (in percents)
+
+## Open the app
+
+The source code is available here on Github: 
+[Github repository](https://github.com/Jappio9000/ddp_shiny/upload/master)
+
+The app can be found here on RPubs:
+
+[NL Weatherdata](http://)
+
+## Future improvements
+
+There's always room for improvement. Some notable improvements for this app would be:
+
+- Be able to select and plot multiple variables
+- Add legend for each variable
+- Be able to select a daterange or a bandwidth (year/month/week)
