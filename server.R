@@ -30,8 +30,8 @@ y <- list(
 
 # make multiple choices available based on columns
 # code example from: http://stackoverflow.com/questions/36784906/shiny-allowling-users-to-choose-which-columns-to-display
-vchoices <- 2:(ncol(weather)-1)
-names(vchoices) <- names(weather)[2:(ncol(weather)-1)]
+#vchoices <- 2:(ncol(weather)-1)
+#names(vchoices) <- names(weather)[2:(ncol(weather)-1)]
 
 
 shinyServer(function(input, output) {
@@ -40,7 +40,7 @@ shinyServer(function(input, output) {
   dataset <- reactive({
     # prepare the input variables
     startdate <- paste(input$year,"-01-01",sep="")
-    col <- as.numeric(input$columns)
+    col <- as.numeric(grep(input$columns, colnames(weather)))
 
     # create dataset from column indexes, including date (column 6)
     df <- data.frame(weather[,c(6, col)])

@@ -14,12 +14,12 @@ shinyUI(fluidPage(
     # make variable selection available for the user
     sidebarPanel(
       selectInput("columns","Select measurement", 
-                  choices = vchoices),
+                  choices = c('TG','TN','TX','UG')),
       hr(),
-      helpText("TG: Average Temperature, 
-        TN: Minimum Temperature, 
-        TX: Maximum Temperature, 
-        UG: Average Humidity"),
+      helpText("TG: Average Temperature",
+        "TN: Minimum Temperature", 
+        "TX: Maximum Temperature", 
+        "UG: Average Humidity"),
        
     # make year selection available for the user
        selectInput("year", "Year:",
